@@ -1,0 +1,46 @@
+.container{
+    padding: 0px;
+    margin-top: 80px;
+    margin-bottom: 110px;
+    margin-left: 70px;
+    margin-right: 105px;
+}
+
+.home-container{
+    display: flex;
+}
+
+.text-container{
+    display: none;
+    margin: 0px;
+}
+.text-container h5{
+    margin-bottom: 19px;
+}
+.text-container p{
+    font-weight: normal;
+    margin-bottom: 51px;
+    width: 320px;
+    height: 60px;
+}
+
+.text-container svg{
+    width: 380px;
+}
+
+.login-container{
+    margin-left: 149px;
+}
+
+@media (min-width: 768px) {
+
+    .home-container{
+        flex-direction: row;
+    }
+
+    .text-container{
+        display: block;
+        margin-left: 0px;
+    }
+    
+}
