@@ -1,0 +1,17 @@
+
+
+.btn-container button{
+    border: 1px solid black;
+}
+
+.btn{
+    height: 30px;
+    width: 100px;
+    padding: 0px;
+    text-transform: uppercase;
+}
+
+.btn p{
+    text-align: center;
+    margin: -4% -4%;
+}
