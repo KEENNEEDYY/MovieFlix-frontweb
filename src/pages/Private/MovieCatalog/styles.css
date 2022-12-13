@@ -1,5 +1,5 @@
 .theme-color-default h5{
-    margin: 15px 12px;
+    margin: 15px 12px 0 12px;
     font-size: 22px;
     height: 33px;
     letter-spacing: -0.015em;
@@ -11,4 +11,21 @@
 
 .list-container p{
     margin-bottom: 12px;
+    margin-left: 18px;
+}
+
+@media (min-width: 1200px) {
+    .theme-color-default h5{
+        font-size: 48px;    
+        margin: 41px 513px 0 40px;
+    }
+
+    .list-container{
+        margin-top: 39px;
+    }
+
+    .list-container p{
+        margin-bottom: 27px;
+        margin-left: 40px;
+    }
 }
