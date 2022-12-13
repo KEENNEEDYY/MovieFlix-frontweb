@@ -1,4 +1,3 @@
-import Button from 'components/Button';
 import './styles.css';
 
 const Navbar = () => {
@@ -9,7 +8,11 @@ const Navbar = () => {
           <h4>MovieFlix</h4>
         </a>
       </div>
-      <Button />
+      <div className="nav-button">
+        <button className="btn nav-btn btn-primary">
+          <p>Sair</p>
+        </button>
+      </div>
     </nav>
   );
 };

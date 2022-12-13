@@ -1,4 +1,5 @@
 import { ReactComponent as MainImage } from 'assets/images/main-image.svg';
+import Login from './Login';
 
 import './styles.css'
 
@@ -13,7 +14,7 @@ const Home = () => {
           <MainImage />
         </div>
         <div className="login-container">
-            <h5>LOGIN CARD</h5>
+            <Login />
         </div>
       </div>
     </div>

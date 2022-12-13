@@ -1,17 +1,15 @@
-
-
 .btn-container button{
     border: 1px solid black;
 }
 
-.btn{
-    height: 30px;
-    width: 100px;
+.button{
+    height: 50px;
+    width: 262px;
     padding: 0px;
     text-transform: uppercase;
 }
 
-.btn p{
+.button p{
     text-align: center;
     margin: -4% -4%;
 }

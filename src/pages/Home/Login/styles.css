@@ -1,0 +1,53 @@
+.base-card{
+    background-color: #9E9E9E;
+    width: 298px;
+    height: 464px;
+    margin: 11px 11px;
+    text-align: center;
+}
+
+.base-card h1{
+    margin-bottom: 40px;
+    padding-top: 59px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.login-submit{
+    margin-top: 54px;
+}
+
+.login-submit button{
+    border: none;
+}
+
+@media (min-width:576px) {
+    .base-card{
+        margin: 1vh 24vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .base-card{
+        margin: 4.8vh 11px;
+        width: 479px;
+        height: 573px;
+    }
+    .base-card h1{
+        padding-top: 74px;
+    }  
+    .base-card input{
+        width: 384px;
+        height: 46px;
+    }  
+    .login-submit{
+        margin-top: 74px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .login-submit button{
+        width: 384px;
+        height: 65px;
+        padding-top: 1vh;
+    }
+}

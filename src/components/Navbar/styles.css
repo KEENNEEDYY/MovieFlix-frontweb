@@ -1,3 +1,19 @@
+.nav-button button{
+    border: 1px solid black;
+}
+
+.nav-btn{
+    height: 30px;
+    width: 100px;
+    padding: 0px;
+    text-transform: uppercase;
+}
+
+.nav-btn p{
+    text-align: center;
+    margin: -4% -4%;
+}
+
 .main-nav{
     height: 68px;
 }
@@ -8,7 +24,7 @@
     padding-bottom: 18px;
 }
 
-.btn-container{
+.nav-button{
     margin-right: 18px;
 }
 
@@ -16,7 +32,7 @@
     .main-nav h4{
         padding-left: 28px;
     }
-    .btn-container{
+    .nav-button{
         margin-right: 28px;
     }    
 }
