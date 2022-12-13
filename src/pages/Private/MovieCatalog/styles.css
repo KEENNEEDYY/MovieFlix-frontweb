@@ -1,0 +1,14 @@
+.theme-color-default h5{
+    margin: 15px 12px;
+    font-size: 22px;
+    height: 33px;
+    letter-spacing: -0.015em;
+}
+
+.list-container{
+    margin-top: 49px;
+}
+
+.list-container p{
+    margin-bottom: 12px;
+}
