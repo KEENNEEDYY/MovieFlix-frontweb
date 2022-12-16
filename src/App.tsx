@@ -4,12 +4,13 @@ import './App.css';
 import Home from 'pages/Home';
 import Catalog from 'pages/Private/MovieCatalog';
 import MovieCatalog from 'pages/Private/MovieCatalog';
+import MovieDetails from 'pages/Private/MovieDetails';
 
 function App() {
   return (
     <>
       <Navbar />
-      <MovieCatalog />
+      <MovieDetails />
     </>
   );
 }

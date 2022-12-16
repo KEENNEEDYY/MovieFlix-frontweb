@@ -1,0 +1,10 @@
+.details-container{
+    width: 90vw;
+    height: 66px;
+    margin: 17px 45px 0 10px;
+}
+
+.details-container h1{
+    font-size: 24px;
+    letter-spacing: -0.015em;
+}
