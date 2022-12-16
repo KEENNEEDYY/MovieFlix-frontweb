@@ -1,12 +1,17 @@
 import ReviewForm from 'components/ReviewForm';
+import ReviewListing from 'components/ReviewListing';
 import './styles.css';
 
 const MovieDetails = () => {
     return(
         <div className="details-container theme-color-default">
-            <h1>Tela de detalhes do filme id:</h1>
+            <h1>Tela de detalhes do filme id: 1</h1>
             <ReviewForm />
-
+            <ReviewListing />
+            <ReviewListing />
+            <ReviewListing />
+            <ReviewListing />
+            <ReviewListing />
         </div>
     );
 };
