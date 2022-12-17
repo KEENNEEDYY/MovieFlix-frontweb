@@ -3,7 +3,7 @@ import './styles.css';
 
 const ReviewForm = () => {
     return(
-        <form className="form-container base-card">
+        <form className="form-container">
             <input 
                 type="text"
                 name="text"

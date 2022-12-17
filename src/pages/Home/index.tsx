@@ -6,7 +6,7 @@ import './styles.css'
 const Home = () => {
   return (
 
-    <div className="container theme-color-default">
+    <div className="container ">
       <div className="home-container">
         <div className="text-container">
           <h5>Avalie Filmes</h5>
