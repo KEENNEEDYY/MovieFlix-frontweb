@@ -8,10 +8,6 @@ const MovieDetails = () => {
             <h1>Tela de detalhes do filme id: 1</h1>
             <ReviewForm />
             <ReviewListing />
-            <ReviewListing />
-            <ReviewListing />
-            <ReviewListing />
-            <ReviewListing />
         </div>
     );
 };
