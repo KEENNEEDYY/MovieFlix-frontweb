@@ -1,8 +1,14 @@
 import {ReactComponent as StarImage} from 'assets/images/start.svg';
+import axios from 'axios';
+import { BASE_URL } from 'util/requests';
 
 import './styles.css';
 
 const ReviewCard = () => {
+    axios.get(BASE_URL+'/reviews/1')
+        .then((response) => {
+            console.log(response.data);
+        })
     return(
         <div className="review-card-container">
             <div className="star-container">

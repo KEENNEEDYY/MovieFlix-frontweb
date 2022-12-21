@@ -1,6 +1,8 @@
 import './styles.css';
 
 const MovieCatalog = () => {
+
+
   return (
     <div className="theme-color-default">
       <h5>Tela de listagem de filmes</h5>
