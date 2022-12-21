@@ -1,6 +1,8 @@
 import Button from 'components/Button';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { requestBackendLogin } from 'util/requests';
+import { getAuthData, saveAuthData } from 'util/storange';
 import './styles.css';
 
 type FormData = {
@@ -10,22 +12,30 @@ type FormData = {
 
 const Login = () => {
 
+    const [hasError, setHasError] = useState(false);
+
     const { register, handleSubmit } = useForm<FormData>();
 
     const onSubmit = (formData : FormData) => {
-        console.log(formData);
         requestBackendLogin(formData)
         .then(response => {
-            console.log('SUCESSO', response);
+            saveAuthData(response.data);
+            console.log("TOKEN GERADO =",getAuthData().access_token);
+            setHasError(false);
         })
         .catch( error => {
-            console.log('ERRO',error);
+            setHasError(true);
         });
     };
 
     return(
         <div className="base-card">            
             <h1>Login</h1>
+            { hasError && 
+                <div className="alert alert-danger">
+                    Ocorreu um erro ao tentar efetuar o Login!!
+                </div>           
+            }
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-4">
                     <input 

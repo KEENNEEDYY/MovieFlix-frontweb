@@ -6,6 +6,11 @@
     text-align: center;
 }
 
+.alert-danger{
+    margin-left: 3.4vw;
+    margin-right: 3.4vw;
+}
+
 .base-card h1{
     margin-bottom: 40px;
     padding-top: 59px;
