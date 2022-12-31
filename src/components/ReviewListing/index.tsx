@@ -1,33 +1,18 @@
+import { Review } from 'types/review';
 import ReviewCard from './ReviewCard';
 import './styles.css';
 
+type Props = {
+    reviews: Review[];
+}
 
-const ReviewListing = () => {
+const ReviewListing = ( props: Props) => {
+    console.log(props);
     return(
         <div className="reviewlisting-container">
-            {/** REVIEWLISTING */}
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
-            <ReviewCard />
+            {props.reviews.map((item) => (
+                <ReviewCard review={item}/>
+            ))}
         </div>
     );
 };

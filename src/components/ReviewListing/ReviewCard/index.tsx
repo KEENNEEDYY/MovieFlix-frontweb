@@ -1,25 +1,21 @@
 import {ReactComponent as StarImage} from 'assets/images/start.svg';
-import axios from 'axios';
-import { BASE_URL } from 'util/requests';
-
+import { Review } from 'types/review';
 import './styles.css';
 
-const ReviewCard = () => {
-    axios.get(BASE_URL+'/reviews/1')
-        .then((response) => {
-            console.log(response.data);
-        })
+type Props = {
+    review: Review;
+}
+
+const ReviewCard = (props : Props ) => {
     return(
         <div className="review-card-container">
             <div className="star-container">
                 <StarImage />
-                <h1>Review Card</h1>
+                <h1>{props.review.user.name}</h1>
             </div>
             <div className="review-description">
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                    Quae recusandae officiis explicabo repudiandae alias voluptatem 
-                    itaque eaque voluptas reiciendis esse?
+                    {props.review.text}
                 </p>
             </div>
         </div>
