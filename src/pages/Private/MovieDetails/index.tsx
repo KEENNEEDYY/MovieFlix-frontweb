@@ -1,11 +1,11 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import  { AxiosRequestConfig } from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Movie } from 'types/movie';
 import ReviewForm from 'components/ReviewForm';
 import ReviewListing from 'components/ReviewListing';
 import './styles.css';
-import { BASE_URL, requestBackend } from 'util/requests';
+import {  requestBackend } from 'util/requests';
 import { Review } from 'types/review';
 
 type UrlParams = {
@@ -23,7 +23,7 @@ const MovieDetails = ( ) => {
         const params: AxiosRequestConfig = {
             method: 'GET',
             // url: `/movies/${movieId}`,
-            url: "/movies/1",
+            url: `/movies/1`,
             withCredentials: true,
         }
         requestBackend(params)

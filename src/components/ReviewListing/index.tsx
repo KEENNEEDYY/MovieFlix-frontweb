@@ -7,7 +7,6 @@ type Props = {
 }
 
 const ReviewListing = ( props: Props) => {
-    console.log(props);
     return(
         <div className="reviewlisting-container">
             {props.reviews.map((item) => (
