@@ -28,7 +28,7 @@ const MovieCatalog = () => {
           movies
           .sort((a, b) => a.id - b.id)
           .map( (item) => (
-            <Link to={`/movies/${item.id}/reviews`}>
+            <Link to={`/movies/${item.id}`}>
               <p>{`Acessar movies/${item.id}`}</p>
             </Link>
             )

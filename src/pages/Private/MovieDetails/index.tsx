@@ -28,11 +28,12 @@ const MovieDetails = ( ) => {
         }
         requestBackend(params)
         .then( response => {
+            // UrlParams não está capturando o número da URL
+            console.log(movieId);
             setMovie(response.data);
             setReviews(response.data.reviews);
         });
     },[movieId]);
-
     
     return(
         <div className="details-container">

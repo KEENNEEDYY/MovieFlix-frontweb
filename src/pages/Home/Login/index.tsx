@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { requestBackendLogin } from 'util/requests';
-import { getAuthData, saveAuthData } from 'util/storange';
+import { saveAuthData } from 'util/storange';
 import './styles.css';
 
 type FormData = {
@@ -22,7 +22,7 @@ const Login = () => {
         .then(response => {
             saveAuthData(response.data);
             setHasError(false);
-            history.push("/movies")
+            history.push("/movies");
         })
         .catch( error => {
             setHasError(true);

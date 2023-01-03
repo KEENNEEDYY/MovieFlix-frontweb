@@ -1,5 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
+import { config } from 'process';
 import qs from 'qs';
+import history from './history';
 import { getAuthData } from './storange';
 
 
@@ -38,4 +40,20 @@ export const requestBackend = (config: AxiosRequestConfig) => {
         Authorization: "Bearer " + getAuthData().access_token,
     } : config.headers;
     return axios({...config, baseURL: BASE_URL, headers});
-}
+};
+
+axios.interceptors.request.use(function (config){
+    return config;
+}, function (error) {
+    return Promise.reject(error);
+});
+axios.interceptors.response.use(function (response) {
+    return response;
+}, function (error) {
+    if(error.response.status === 401 || error.response.status === 403){
+        history.push("/");
+    }
+    return Promise.reject(error);
+});
+
+
