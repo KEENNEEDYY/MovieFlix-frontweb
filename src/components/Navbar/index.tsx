@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
+import { removeAuthData } from 'util/storange';
 import './styles.css';
+
+const handleLogoutClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  event.preventDefault();
+  removeAuthData();
+}
 
 const Navbar = () => {
   return (
@@ -11,7 +17,7 @@ const Navbar = () => {
       </div>
       <div className="nav-button">
         <button className="btn nav-btn btn-primary">
-          <p>Sair</p>
+          <a href="#logout"  onClick={handleLogoutClick} >Sair</a>
         </button>
       </div>
     </nav>

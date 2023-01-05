@@ -22,14 +22,11 @@ const MovieDetails = ( ) => {
     useEffect(() => {
         const params: AxiosRequestConfig = {
             method: 'GET',
-            // url: `/movies/${movieId}`,
-            url: `/movies/1`,
+            url: `/movies/${movieId}`,
             withCredentials: true,
         }
         requestBackend(params)
         .then( response => {
-            // UrlParams não está capturando o número da URL
-            console.log(movieId);
             setMovie(response.data);
             setReviews(response.data.reviews);
         });
