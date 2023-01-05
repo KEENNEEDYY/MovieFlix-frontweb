@@ -1,4 +1,5 @@
 import Navbar from "components/Navbar";
+import PrivateRoute from "components/PrivateRoute";
 import Home from "pages/Home";
 import MovieCatalog from "pages/Private/MovieCatalog";
 import MovieDetails from "pages/Private/MovieDetails";
@@ -12,12 +13,12 @@ const Routes = () => (
             <Route path="/" exact>
                 <Home />
             </Route>
-            <Route path="/movies" exact>
+            <PrivateRoute path="/movies">
                 <MovieCatalog />
-            </Route>
-            <Route path="/movies/:movieId">
+            </PrivateRoute>
+            <PrivateRoute path="/movies/:movieId">
                 <MovieDetails />
-            </Route>
+            </PrivateRoute>
         </Switch>
     </Router>
 );
