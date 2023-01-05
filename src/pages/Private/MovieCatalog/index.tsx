@@ -17,7 +17,6 @@ const MovieCatalog = () => {
     };
     requestBackend(params).then((response) => {
       setMovies(response.data.content);
-      console.log(response.data.content);
     });
   }, []);
   
