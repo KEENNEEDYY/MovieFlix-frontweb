@@ -7,6 +7,7 @@ import ReviewListing from 'components/ReviewListing';
 import './styles.css';
 import {  requestBackend } from 'util/requests';
 import { Review } from 'types/review';
+import { hasAnyRoles } from 'util/auth';
 
 type UrlParams = {
     movieId: string;
@@ -35,8 +36,9 @@ const MovieDetails = ( ) => {
     return(
         <div className="details-container">
             <h1>Tela de detalhes do filme id: {movie?.id}</h1>
-            <ReviewForm />
-            {reviews &&
+            { hasAnyRoles(['ROLE_MEMBER']) &&
+                <ReviewForm movieId={movieId} />}
+            { reviews &&
                 <ReviewListing reviews={reviews} />            
             }
         </div>

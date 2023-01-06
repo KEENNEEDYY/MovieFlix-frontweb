@@ -1,7 +1,12 @@
 import Button from 'components/Button';
 import './styles.css';
 
-const ReviewForm = () => {
+type Props = {
+    movieId: string;
+}
+
+const ReviewForm = ({movieId}: Props) => {
+    
     return(
         <form className="form-container">
             <input 

@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { config } from 'process';
 import qs from 'qs';
 import history from './history';
 import { getAuthData } from './storange';
