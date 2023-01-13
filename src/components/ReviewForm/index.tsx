@@ -3,6 +3,7 @@ import Button from 'components/Button';
 import './styles.css';
 import { AxiosRequestConfig } from 'axios';
 import { requestBackend } from 'util/requests';
+import { Review } from 'types/review';
 
 type FormData = {
     text: string;
@@ -11,9 +12,10 @@ type FormData = {
 
 type Props = {
     movieId: string;
+    onInsertReview: (review: Review) => void;
 }
 
-const ReviewForm = ({movieId}: Props) => {
+const ReviewForm = ({movieId, onInsertReview}: Props) => {
 
     const [formData, setFormData] = useState<FormData>({
         text: '', movieId:parseInt(movieId),
@@ -22,9 +24,12 @@ const ReviewForm = ({movieId}: Props) => {
     const handleChange = (event : React.ChangeEvent<HTMLInputElement>)=>{
         const text = event.target.name;
         const value = event.target.value;
-
         setFormData({ ...formData , [text]: value});
     };
+
+    const clearForm = () => {
+        setFormData({text: '', movieId: parseInt(movieId)});
+    }
 
 
     const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
@@ -38,8 +43,13 @@ const ReviewForm = ({movieId}: Props) => {
         };
 
         requestBackend(params).then((response) => {
-            console.log(response.data);
+            onInsertReview(response.data);
+            console.log("SALVO COM SUCESSO ", response.data);
         })
+        .catch(error => {
+            console.log("ERRO AO SALVAR", error);
+        })
+        clearForm();
     };
     
     return(
