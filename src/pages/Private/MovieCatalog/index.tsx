@@ -1,4 +1,5 @@
 import { AxiosRequestConfig } from 'axios';
+import MovieCard from 'components/MovieCard';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
@@ -22,15 +23,19 @@ const MovieCatalog = () => {
   
   return (
     <div className="theme-color-default">
-      <h5>Tela de listagem de filmes</h5>
-      <div className="list-container">
-        { 
+      <div className="movie-listing-top-container base-card">
+        <p>MovieFilterData</p>
+      </div>
+      <div className="list-container row">
+        { movies &&
           movies
           .sort((a, b) => a.id - b.id)
           .map( (item) => (
-            <Link to={`/movies/${item.id}`}>
-              <p>{`Acessar movies/${item.id}`}</p>
-            </Link>
+              <div className="movie-card-container col-12 col-sm-6 col-md-6 col-xl-3">
+                <Link to={`/movies/${item.id}`}>
+                  <MovieCard movie={item}/>
+                </Link>
+              </div>            
             )
           )
         }
