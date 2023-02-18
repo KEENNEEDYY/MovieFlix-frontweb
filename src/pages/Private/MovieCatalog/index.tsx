@@ -32,8 +32,8 @@ const MovieCatalog = () => {
           .sort((a, b) => a.id - b.id)
           .map( (item) => (
               <div className="movie-card-container col-12 col-sm-6 col-md-6 col-xl-3">
-                <Link to={`/movies/${item.id}`}>
-                  <MovieCard movie={item}/>
+                <Link to={`/movies/${item.id}`} key={item.id}>
+                  <MovieCard movie={item} key={item.id}/>
                 </Link>
               </div>            
             )

@@ -1,6 +1,9 @@
 .base-card.movie-card{
     height: 322px;
     width: 300px;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-right: 10px;
 }
 
 .movie-card img{
@@ -29,11 +32,25 @@
     font-family: sans-serif;
 }
 
+.movie-card-container{
+   width: 320px;
+   padding-left: 0px;
+   padding-right: 0px;
+   margin-left: 10px;
+}
+
 
 @media (min-width: 576px) {
 
+    .movie-card-container{
+        padding-right: 0px;
+        width: 258px;
+        margin-left: 20px;
+     }
+
     .base-card.movie-card{
         width: 258px;
+        margin-left: 0px;
     }
     
 }
@@ -42,25 +59,38 @@
     .base-card.movie-card{
         height: 364px;
         width: 324px;
-        margin: 11px calc( (1200px - 322px) * 1/2 );
+       
     }    
+    .movie-card-container{
+        width: 324px;
+        margin-top: 20px;
+        margin-left: 40px;
+     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 991px) {
     .base-card.movie-card{
         height: 457px;
         width: 436px;
+       
     }    
+    .movie-card-container{
+        width: 436px;
+    }
 }
 
 @media (min-width: 1200px){
     .base-card.movie-card{
         height: 322px;
         width: 258px;
-        margin: 11px calc( (1200px - 322px) * 1/2 );
+    }
+    .movie-card-container{
+        width: 258px;
+        margin-left: 30px;
     }
 }
 
 @media (min-width: 1400px) {
     
+        
 }
