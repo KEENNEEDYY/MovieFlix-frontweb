@@ -1,0 +1,59 @@
+.movie-details-card.base-card{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 25px;
+    height: unset;
+    padding-bottom: 20px;
+    background-color: #6C6C6C;
+}
+
+.movie-details-card h5{
+    font-weight: 700px;
+    font-size: 27px;
+    letter-spacing: -0.015em;
+    padding-top: 15px;
+    text-align: left;
+    margin: 0 20px 5px 20px;
+}
+
+.movie-details-card h4{
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: -0.015em;
+    color: #FFC700;
+    text-align: left;
+    margin: 0 20px 5px 20px;
+}
+
+.movie-details-card p{
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+    text-align: left;
+    margin: 0 20px 15px 20px;
+}
+
+.movie-details-card img{
+    min-width: 260px;
+    min-height: 163px;
+    width: 100%;
+    padding: 20px 20px 0px 20px;
+}
+ 
+.details-synopsis{
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0 20px 0px 20px;
+}
+
+.details-synopsis p{
+    font-family: unset;
+    margin: 10px 10px;
+    font-size: 16px;
+    text-align: justify;
+    letter-spacing: -0.015em;
+    color: #9E9E9E;
+}

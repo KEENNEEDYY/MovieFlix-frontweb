@@ -8,6 +8,7 @@ import './styles.css';
 import {  requestBackend } from 'util/requests';
 import { Review } from 'types/review';
 import { hasAnyRoles } from 'util/auth';
+import MovieCard from './MovieCard';
 
 type UrlParams = {
     movieId: string;
@@ -41,11 +42,27 @@ const MovieDetails = ( ) => {
     
     return(
         <div className="details-container">
-            <h1>Tela de detalhes do filme id: {movie?.id}</h1>
+
+            {/* <h1>Tela de detalhes do filme id: {movie?.id}</h1> */
+                movie &&
+                <MovieCard movie={movie as Movie} />
+            }
+            
+
             { hasAnyRoles(['ROLE_MEMBER']) &&
-                <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />}
+                
+                <>
+                    <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />
+                    { !reviews && <p><br /></p>}
+                </>
+                
+            }
             { reviews &&
-                <ReviewListing reviews={reviews} />            
+                <>
+                    <ReviewListing reviews={reviews} /> 
+                    <p><br /></p>
+                </>
+                           
             }
         </div>
     );

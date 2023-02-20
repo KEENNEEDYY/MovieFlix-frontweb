@@ -27,6 +27,7 @@
 }
 
 .base-card.movie-card p{
+    text-align: center;
     margin: unset;
     padding: unset;
     font-family: sans-serif;
