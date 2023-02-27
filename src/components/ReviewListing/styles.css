@@ -1,5 +1,8 @@
 .reviewlisting-container{
     margin-top: 4.6vh;
+    padding-top: 17px;
+    padding-left: 7px;
+    padding-bottom: 28px;
 
     min-width: 300px;
     max-width: 1127px;
@@ -8,4 +11,27 @@
     background-color: #6C6C6C;
     border-radius: 6px;   
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); 
+}
+
+@media (min-width: 768px){
+    .reviewlisting-container{
+        padding: 1vh 5.31vw 5.31vh 5.31vw;        
+    }
+}
+@media (min-width: 992px){
+    .reviewlisting-container{
+        padding: 1vh 4.034vw 3.4vh 4.034vw;         
+    }
+}
+@media (min-width: 1200px){
+    .reviewlisting-container{
+        padding-right: 3.34vw;
+        padding-left: 3.34vw;
+        margin-right: unset;
+    }
+}
+@media (min-width: 1400px){
+    .reviewlisting-container{
+        
+    }
 }

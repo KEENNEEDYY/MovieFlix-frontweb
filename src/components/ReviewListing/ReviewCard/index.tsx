@@ -11,10 +11,10 @@ const ReviewCard = (props : Props ) => {
         <div className="review-card-container">
             <div className="star-container">
                 <StarImage />
-                <h1>{props.review.user.name}</h1>
+                <h1 className="review-card-name">{props.review.user.name}</h1>
             </div>
             <div className="review-description">
-                <p>
+                <p className="review-description-text">
                     {props.review.text}
                 </p>
             </div>

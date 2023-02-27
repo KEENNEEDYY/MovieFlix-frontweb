@@ -5,6 +5,7 @@
     height: unset;
     padding-bottom: 20px;
     background-color: #6C6C6C;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .movie-details-card h5{
@@ -40,10 +41,11 @@
     min-width: 260px;
     min-height: 163px;
     width: 100%;
-    padding: 20px 20px 0px 20px;
+    padding: 20px 0px 0px 0px;
 }
  
 .details-synopsis{
+    font-family: sans-serif;
     border: 1px solid white;
     border-radius: 10px;
     margin: 0 20px 0px 20px;
@@ -56,4 +58,85 @@
     text-align: justify;
     letter-spacing: -0.015em;
     color: #9E9E9E;
+}
+
+@media (min-width: 576px) {
+    .movie-details-card img{
+        padding: 20px 20px 0px 20px;
+    }
+    .movie-details-card.base-card{
+        width: 100%;
+    }  
+}
+
+@media (min-width: 768px) {
+    .movie-details-card img{
+        padding: 40px 40px 0 40px;
+    }
+    .movie-details-card h5{
+        font-size: 36px;
+        margin-left: 40px;
+    }  
+    .movie-details-card h4{
+        font-size: 24px;
+        margin-left: 40px;
+    }
+    .movie-details-card p{
+        font-size: 24px;
+        margin-left: 40px;
+    }
+    .details-synopsis p{
+        font-size: 18px;
+        margin: 15px;
+    }
+    .details-synopsis{
+        margin: 40px 40px 20px 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .movie-details-card.base-card{
+        margin-bottom: 40px;
+        padding-bottom: 45px;
+    }
+    .movie-details-card img{
+        max-width: 608px;
+    }
+    .movie-details-card h5{
+        padding-top: 19px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .movie-details-card.base-card{
+        display: flex;
+        flex-direction: row;
+    }
+    .movie-details-card img{
+        width: 41.66vw;
+    }
+
+    .movie-details-card h5{
+        margin-left: 0px;
+        padding-top: 40px;
+    }  
+    .movie-details-card h4{
+        margin-left: 0px;
+    }
+    .movie-details-card p{
+        margin-left: 0px;
+    }
+    .details-synopsis p{
+        font-size: 18px;
+        margin: 15px;
+    }
+    .details-synopsis{
+        margin-left:  0px;
+        margin-top: 16px;
+    }
+    
+}
+
+@media (min-width: 1400px) {
+    
 }

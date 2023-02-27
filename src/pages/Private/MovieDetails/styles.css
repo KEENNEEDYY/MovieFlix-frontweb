@@ -1,7 +1,7 @@
 .details-container{
     width: 90vw;
     height: 66px;
-    margin-top: 17px;
+    margin-top: 20px;
     margin-left: 3vw;
     margin-right: 3vw;
     text-align: center;
@@ -9,32 +9,48 @@
     color: #ffff;
 }
 
-.details-container h1{
-    font-size: 22px;
-    letter-spacing: -0.015em;
-    text-align: left;
+.details-container-reviews{
+    padding-bottom: 6.14vh;
 }
 
+.details-form-container{
+    padding-bottom: 20px;
+} 
+
 @media (min-width: 576px) {
-    .details-container h1{
-        font-size: 24px;
-    }    
+    .details-container{
+        margin-top: 40px;
+        margin-left: 3.6vw;
+        margin-right: 3.6vw;
+        max-width: 536px;
+        width: 100%;
+    } 
+    .space-form-container{
+        padding-bottom: 40px;
+    } 
 }
 
 @media (min-width: 768px) {
     .details-container{
-        margin-left: 5vw;        
-    }
-    .details-container h1{
-        font-size: 36px;
+        margin-left: 5.26vw;
+        margin-right: 5.26vw;
+        max-width: 688px;
     }
 }
 
-@media (min-width: 1200px) {
-    .details-container h1{
-        margin-right: 3vw;
-        font-size: 48px;
+@media (min-width: 992px) {
+    .details-container{
+        max-width: 912px;
     }    
+}
+
+@media (min-width: 1200px) {
+    .details-container{
+        max-width: 1120px;
+        margin-left: 3.4vw;
+        margin-right: 3.4vw;
+    }
+  
 }
 
 @media (min-width: 1400px) {
