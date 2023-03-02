@@ -9,9 +9,12 @@ const MovieCard = ( prop: Props) => {
     return(
         <div className="base-card movie-card">
             <img src={prop.movie.imgUrl} alt={prop.movie.title} />
-            <h5> {prop.movie.title} </h5>
-            <h4> {prop.movie.year} </h4>
-            <p> {prop.movie.subTitle} </p>
+            <div className="movie-card-text">
+                <h5> {prop.movie.title} </h5>
+                <h4> {prop.movie.year} </h4>
+                <p> {prop.movie.subTitle} </p>
+            </div>
+            
         </div>
     )
 }

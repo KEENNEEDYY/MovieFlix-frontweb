@@ -4,12 +4,17 @@
     margin-bottom: 20px;
     margin-top: 0px;
     margin-right: 10px;
+    text-align: left;
 }
 
 .movie-card img{
     height: auto;
     width: 100%;
     margin-top: 26px;
+}
+
+.movie-card-text{
+    margin-left: 15px;
 }
 
 .base-card.movie-card h5{
@@ -27,7 +32,7 @@
 }
 
 .base-card.movie-card p{
-    text-align: center;
+    text-align: left;
     margin: unset;
     padding: unset;
     font-family: sans-serif;

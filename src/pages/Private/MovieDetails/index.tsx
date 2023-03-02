@@ -53,11 +53,11 @@ const MovieDetails = ( ) => {
                 
                 <>
                     <ReviewForm movieId={movieId} onInsertReview={handleInsertReview} />
-                    { !reviews && <p><br /></p>}
+
                 </>
                                 
             }
-            
+
             {reviews.length === 0 ? <div className="space-form-container"></div> :null }
 
             { reviews.length > 0 ? 

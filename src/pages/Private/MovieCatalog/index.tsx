@@ -1,5 +1,7 @@
+
 import { AxiosRequestConfig } from 'axios';
 import MovieCard from 'components/MovieCard';
+import Pagination from 'components/Pagination';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
@@ -21,12 +23,15 @@ const MovieCatalog = () => {
     });
   }, []);
   
+
+
   return (
-    <div className="theme-color-default">
+    <div className="theme-color-default main-container">
       <div className="movie-listing-top-container base-card">
         <p>MovieFilterData</p>
       </div>
       <div className="list-container row">
+
         { movies &&
           movies
           .sort((a, b) => a.id - b.id)
@@ -39,6 +44,9 @@ const MovieCatalog = () => {
             )
           )
         }
+      </div>
+      <div className="row">
+        <Pagination />
       </div>
     </div>
   );

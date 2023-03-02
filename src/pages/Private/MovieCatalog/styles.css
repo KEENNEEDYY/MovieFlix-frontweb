@@ -1,3 +1,7 @@
+.main-container{
+    padding-bottom: 10px;
+}
+
 .movie-listing-top-container.base-card{
     height: 60px;
     width: auto;
@@ -19,6 +23,12 @@
 .list-container{
     margin-top: 20px;
     padding: 0px;
+}
+
+.listing2{
+    display: flex;
+    align-items: center;
+    align-content: center;
 }
 
 .base-card.movie-card{
