@@ -1,29 +1,34 @@
-
-import { AxiosRequestConfig } from 'axios';
 import MovieCard from 'components/MovieCard';
 import Pagination from 'components/Pagination';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
-import { requestBackend } from 'util/requests';
+import { AxiosParams } from 'types/vendor/axios';
+import { SpringPage } from 'types/vendor/spring';
+import { BASE_URL, requestBackend } from 'util/requests';
+
 import './styles.css';
 
 const MovieCatalog = () => {
 
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const [page, setPage] = useState<SpringPage<Movie>>();
 
-  useEffect(()=>{
-    const params: AxiosRequestConfig = {
+  useEffect( () => {
+    const params: AxiosParams = {
       method: 'GET',
-      url: "/movies",
+      url: `${BASE_URL}/movies`,
+      params:{
+        page: 0,
+        size: 4,
+      },
       withCredentials: true,
-    };
-    requestBackend(params).then((response) => {
-      setMovies(response.data.content);
-    });
-  }, []);
-  
+    }
 
+    requestBackend(params)
+      .then( response => {
+        setPage(response.data);
+      });
+  }, []);
 
   return (
     <div className="theme-color-default main-container">
@@ -32,12 +37,10 @@ const MovieCatalog = () => {
       </div>
       <div className="list-container row">
 
-        { movies &&
-          movies
-          .sort((a, b) => a.id - b.id)
+      { page?.content
           .map( (item) => (
-              <div className="movie-card-container col-12 col-sm-6 col-md-6 col-xl-3">
-                <Link to={`/movies/${item.id}`} key={item.id}>
+              <div className="movie-card-container col-12 col-sm-6 col-md-6 col-xl-3" key={item.id}>
+                <Link to={`/movies/${item.id}`} >
                   <MovieCard movie={item} key={item.id}/>
                 </Link>
               </div>            
