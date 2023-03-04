@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+ul.pagination-container *{
+    list-style-type: none;
+}
+
 .pagination-item{
     width: 40px;
     height: 40px;
@@ -23,9 +27,18 @@
     background-color: #FFC700;
 }
 
+.pagination-link-active{
+    background-color: #FFC700;
+}
+
+.arrow-previous{
+    color: #FFC700;
+}
+
 .arrow-next{
     transform: rotate(180deg);
     margin-left: 10px;
+    color: #FFC700;
 }
 
 .arrow-inactive{
@@ -34,4 +47,9 @@
 
 .arrow-active{
     color: #FFC700;
+}
+
+.pagination-arrow-container{
+    display: flex;
+    align-items: center;
 }

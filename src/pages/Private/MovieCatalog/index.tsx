@@ -38,10 +38,10 @@ const MovieCatalog = () => {
       <div className="list-container row">
 
       { page?.content
-          .map( (item) => (
-              <div className="movie-card-container col-12 col-sm-6 col-md-6 col-xl-3" key={item.id}>
-                <Link to={`/movies/${item.id}`} >
-                  <MovieCard movie={item} key={item.id}/>
+          .map( (movie) => (
+              <div className="movie-card-container col-12 col-sm-6 col-md-6 col-xl-3" key={movie.id}>
+                <Link to={`/movies/${movie.id}`} >
+                  <MovieCard movie={movie} key={movie.id}/>
                 </Link>
               </div>            
             )
