@@ -14,11 +14,15 @@ const MovieCatalog = () => {
   const [page, setPage] = useState<SpringPage<Movie>>();
 
   useEffect( () => {
+    getMovies(0);
+  }, []);
+
+  const getMovies = (pageNumber: number) => {
     const params: AxiosParams = {
       method: 'GET',
       url: `${BASE_URL}/movies`,
       params:{
-        page: 0,
+        page: pageNumber,
         size: 4,
       },
       withCredentials: true,
@@ -28,7 +32,7 @@ const MovieCatalog = () => {
       .then( response => {
         setPage(response.data);
       });
-  }, []);
+  }
 
   return (
     <div className="theme-color-default main-container">
@@ -49,7 +53,7 @@ const MovieCatalog = () => {
         }
       </div>
       <div className="row">
-        <Pagination />
+        <Pagination onChange={getMovies} pageCount={ (page) ? page.totalPages : 0 } range={3}/>
       </div>
     </div>
   );

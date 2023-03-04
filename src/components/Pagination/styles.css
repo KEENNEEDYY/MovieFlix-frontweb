@@ -49,7 +49,7 @@ ul.pagination-container *{
     color: #FFC700;
 }
 
-.pagination-arrow-container{
+.pagination-arrow-container {
     display: flex;
     align-items: center;
 }
