@@ -1,6 +1,6 @@
 import MovieCard from 'components/MovieCard';
 import Pagination from 'components/Pagination';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Movie } from 'types/movie';
 import { AxiosParams } from 'types/vendor/axios';
@@ -9,30 +9,43 @@ import { BASE_URL, requestBackend } from 'util/requests';
 
 import './styles.css';
 
+type ControlComponentsData = {
+  activePage: number;
+}
+
 const MovieCatalog = () => {
 
   const [page, setPage] = useState<SpringPage<Movie>>();
+  const [ controlComponentsData, setControlComponentsData ] = useState<ControlComponentsData>({
+    activePage:0
+  });
+
+  const handlePageChange = (pageNumber : number ) => {
+    setControlComponentsData( {activePage: pageNumber} )
+  }
+
+  const getMovies = useCallback(
+    (pageNumber: number) => {
+      const params: AxiosParams = {
+        method: 'GET',
+        url: `${BASE_URL}/movies`,
+        params:{
+          page: controlComponentsData.activePage,
+          size: 4,
+        },
+        withCredentials: true,
+      }
+  
+      requestBackend(params)
+        .then( response => {
+          setPage(response.data);
+        });
+    } 
+    , [controlComponentsData])
 
   useEffect( () => {
     getMovies(0);
-  }, []);
-
-  const getMovies = (pageNumber: number) => {
-    const params: AxiosParams = {
-      method: 'GET',
-      url: `${BASE_URL}/movies`,
-      params:{
-        page: pageNumber,
-        size: 4,
-      },
-      withCredentials: true,
-    }
-
-    requestBackend(params)
-      .then( response => {
-        setPage(response.data);
-      });
-  }
+  }, [getMovies]);
 
   return (
     <div className="theme-color-default main-container">
@@ -53,7 +66,7 @@ const MovieCatalog = () => {
         }
       </div>
       <div className="row">
-        <Pagination onChange={getMovies} pageCount={ (page) ? page.totalPages : 0 } range={3}/>
+        <Pagination onChange={handlePageChange} pageCount={ (page) ? page.totalPages : 0 } range={3}/>
       </div>
     </div>
   );
