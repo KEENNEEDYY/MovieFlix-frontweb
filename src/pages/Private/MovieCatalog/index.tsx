@@ -1,4 +1,5 @@
 import MovieCard from 'components/MovieCard';
+import MovieFilter from 'components/MovieFilter/MovieFilter';
 import Pagination from 'components/Pagination';
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -50,7 +51,7 @@ const MovieCatalog = () => {
   return (
     <div className="theme-color-default main-container">
       <div className="movie-listing-top-container base-card">
-        <p>MovieFilterData</p>
+        <MovieFilter />
       </div>
       <div className="list-container row">
 
