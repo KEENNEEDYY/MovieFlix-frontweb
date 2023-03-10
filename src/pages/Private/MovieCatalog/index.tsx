@@ -1,5 +1,5 @@
 import MovieCard from 'components/MovieCard';
-import MovieFilter from 'components/MovieFilter/MovieFilter';
+import MovieFilter, { MovieFilterData } from 'components/MovieFilter/MovieFilter';
 import Pagination from 'components/Pagination';
 import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -12,17 +12,24 @@ import './styles.css';
 
 type ControlComponentsData = {
   activePage: number;
+  filterData: MovieFilterData;
 }
 
 const MovieCatalog = () => {
 
   const [page, setPage] = useState<SpringPage<Movie>>();
+
   const [ controlComponentsData, setControlComponentsData ] = useState<ControlComponentsData>({
-    activePage:0
+    activePage:0,
+    filterData:{name:"", genre: null}
   });
 
   const handlePageChange = (pageNumber : number ) => {
-    setControlComponentsData( {activePage: pageNumber} )
+    setControlComponentsData( {activePage: pageNumber, filterData: controlComponentsData.filterData } )
+  }
+
+  const hadleSubimitFilter = (data: MovieFilterData) => {
+    setControlComponentsData({ activePage: 0, filterData: data})
   }
 
   const getMovies = useCallback(
@@ -33,6 +40,7 @@ const MovieCatalog = () => {
         params:{
           page: controlComponentsData.activePage,
           size: 4,
+          genreId: controlComponentsData.filterData.genre?.id
         },
         withCredentials: true,
       }
@@ -51,7 +59,7 @@ const MovieCatalog = () => {
   return (
     <div className="theme-color-default main-container">
       <div className="movie-listing-top-container base-card">
-        <MovieFilter />
+        <MovieFilter onSubmitFilter={hadleSubimitFilter}/>
       </div>
       
       <div className="list-container row">
@@ -67,7 +75,7 @@ const MovieCatalog = () => {
         }
       </div>
       <div className="row">
-        <Pagination onChange={handlePageChange} pageCount={ (page) ? page?.totalPages : 0 } range={3}/>
+        <Pagination forcePage={page?.number} onChange={handlePageChange} pageCount={ (page) ? page?.totalPages : 0 } range={3}/>
       </div>
     </div>
   );

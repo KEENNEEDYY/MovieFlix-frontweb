@@ -1,4 +1,3 @@
-import { getValue } from '@testing-library/user-event/dist/utils';
 import { useEffect,useState } from 'react';
 import { useForm } from 'react-hook-form';
 import Select from 'react-select';
@@ -9,12 +8,16 @@ import { BASE_URL, requestBackend } from 'util/requests';
 
 import './styles.css'
 
-type MovieFilterData = {
+export type MovieFilterData = {
     name: string;
-    genre: Genre;
+    genre: Genre | null;
 }
 
-const MovieFilter = () => {
+type Props = {
+    onSubmitFilter: (data: MovieFilterData) => void;
+}
+
+const MovieFilter = ({ onSubmitFilter }: Props) => {
 
     const { 
         setValue,
@@ -27,7 +30,7 @@ const MovieFilter = () => {
             name: getValues('name'),
             genre: getValues('genre')
         }
-        console.log('Enviou', obj);
+        onSubmitFilter(obj);
     }
 
     const [selectGenries, setSelectGenries] = useState<Genre[]>([]);
@@ -48,7 +51,7 @@ const MovieFilter = () => {
 
     return(
             <div className="movie-filter-container">
-                <form onSubmit={()=>{}}  className="movie-filter">
+                <form className="movie-filter">
                     <Select options={selectGenries} classNamePrefix="movie-filter" 
                         isClearable
                         onChange={ value => handleChangeGenre(value as Genre)}
