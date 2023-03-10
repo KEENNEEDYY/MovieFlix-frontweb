@@ -11,7 +11,6 @@
 }
 
 .movie-filter__control *{
- 
     text-align: left;
     font-weight: 400; 
     font-style: normal;
@@ -25,10 +24,23 @@
     outline: none;
 }
 
+.movie-filter__control :focus{
+    box-shadow: none;
+}
+
 .movie-filter__menu *{
     color: #ffff;
     background-color: #6C6C6C;
 }
 
+@media (min-width: 1200px) {
+    .movie-filter-container{
+        height: 20px;
+    }
+    .movie-filter__control {
+        height: 3vh;
+    }
+    
+}
 
 

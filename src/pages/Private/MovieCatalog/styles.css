@@ -58,11 +58,16 @@
         margin-left: 36px;
         margin-right: 40px;
         margin-top: 40px;
+        width: 689px;
         max-width: 689px;
     }
 }
 
 @media (min-width: 992px) {
+    .movie-listing-top-container.base-card{
+        width: 916px;
+        max-width: 1122px;
+    }
     
 }
 
@@ -76,7 +81,7 @@
         margin-top: 42px;
         margin-right: 40px;
         margin-left: 40px;
-        max-width: 1122px;
+        width: 1222px;
     }
     
 }

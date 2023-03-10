@@ -53,8 +53,8 @@ const MovieCatalog = () => {
       <div className="movie-listing-top-container base-card">
         <MovieFilter />
       </div>
+      
       <div className="list-container row">
-
       { page?.content
           .map( (movie) => (
               <div className="movie-card-container col-12 col-sm-6 col-md-6 col-xl-3" key={movie.id}>
@@ -67,7 +67,7 @@ const MovieCatalog = () => {
         }
       </div>
       <div className="row">
-        <Pagination onChange={handlePageChange} pageCount={ (page) ? page.totalPages : 0 } range={3}/>
+        <Pagination onChange={handlePageChange} pageCount={ (page) ? page?.totalPages : 0 } range={3}/>
       </div>
     </div>
   );
