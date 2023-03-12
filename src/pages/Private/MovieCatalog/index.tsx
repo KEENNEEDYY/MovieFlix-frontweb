@@ -21,7 +21,7 @@ const MovieCatalog = () => {
 
   const [ controlComponentsData, setControlComponentsData ] = useState<ControlComponentsData>({
     activePage:0,
-    filterData:{name:"", genre: null}
+    filterData:{name:"", genre: null},
   });
 
   const handlePageChange = (pageNumber : number ) => {
