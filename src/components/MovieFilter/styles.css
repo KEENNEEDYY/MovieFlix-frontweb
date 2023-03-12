@@ -1,46 +1,63 @@
 .movie-filter-container{
     border-radius: 4px;
-
     margin-left: 20px;
     margin-right: 20px;
     margin-top: 5px;
-
     width: 260px;
     height: 50px;
     padding-top: 5px;
 }
 
-.movie-filter__control *{
+.movie-filter-container *{
+    color: #ffff;
+}
+
+.movie-filter__control {
     text-align: left;
+    align-content: center;
     font-weight: 400; 
     font-style: normal;
     font-size: 16px;
     font-family: 'Open Sans';
     letter-spacing: -0.015em;
-    color: #ffff;
-    background-color: #6C6C6C;
     box-sizing: unset;
     border: none;
     outline: none;
+}
+
+.movie-filter__value-container{
+    color: #ffff;
+    background-color: #6C6C6C;
+}
+
+.movie-filter__indicators{
+    color: #ffff;
+    background-color: #6C6C6C;
+}
+
+.movie-filter__indicator{
+    color: #ffff;
+    background-color: #6C6C6C;
+}
+.movie-filter__indicator-separator{
+    display: none;
+}
+
+.movie-filter__menu-list{
+    color: #ffff;
+    background-color: #6C6C6C;
 }
 
 .movie-filter__control :focus{
     box-shadow: none;
 }
 
-.movie-filter__menu *{
+.movie-filter__menu {
     color: #ffff;
     background-color: #6C6C6C;
 }
 
-@media (min-width: 1200px) {
-    .movie-filter-container{
-        height: 20px;
-    }
-    .movie-filter__control {
-        height: 3vh;
-    }
-    
+.movie-filter__value-container div{
+    color: #ffff;
 }
-
 

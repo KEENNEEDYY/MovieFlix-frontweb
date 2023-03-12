@@ -82,6 +82,8 @@
         margin-right: 40px;
         margin-left: 40px;
         width: 1222px;
+        height: 80px;
+        padding: none;
     }
     
 }

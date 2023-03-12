@@ -43,7 +43,7 @@ const MovieDetails = ( ) => {
     return(
         <div className="details-container">
 
-            {/* <h1>Tela de detalhes do filme id: {movie?.id}</h1> */
+            {
                 movie &&
                 <MovieCard movie={movie as Movie} />
             }

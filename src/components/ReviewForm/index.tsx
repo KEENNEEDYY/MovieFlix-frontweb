@@ -47,11 +47,9 @@ const ReviewForm = ({movieId, onInsertReview}: Props) => {
         requestBackend(params).then((response) => {
             onInsertReview(response.data);
             toast.success('Review salva com sucesso!')
-            console.log("SALVO COM SUCESSO ", response.data);
         })
         .catch(error => {
-            toast.error('Erro ao salvar a review!')
-            console.log("ERRO AO SALVAR", error);
+            toast.error('Review em branco: Erro ao salvar a review!')
         })
         clearForm();
     };
